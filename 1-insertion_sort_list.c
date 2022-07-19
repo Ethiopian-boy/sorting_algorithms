@@ -8,7 +8,7 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *curr, *tmp, *swp;
+	listint_t *curr, *tmp, *swap;
 
 	if (!list || *list == NULL)
 		return;
@@ -29,7 +29,7 @@ void insertion_sort_list(listint_t **list)
 				if (tmp->next != NULL)
 					tmp->next->prev = tmp;
 				swap->prev = tmp->prev;
-				if (swap->pre != NULL)
+				if (swap->prev != NULL)
 					swap->prev->next = swap;
 				else
 					*list = swap;
